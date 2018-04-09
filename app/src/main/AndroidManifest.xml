@@ -18,8 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.ListeActivity" />
-        <activity android:name=".Activity.InscriptionActivity"></activity>
+        <activity android:name=".Activity.ListeLoueActivity" />
+        <activity android:name=".Activity.ListeDispoActivity" />
+        <activity android:name=".Activity.InscriptionActivity" />
+        <activity android:name=".Activity.FormulaireLocation"></activity>
     </application>
 
 </manifest>

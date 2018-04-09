@@ -15,6 +15,7 @@
         android:textSize="16dp"
         android:text="Mail utilisateur :"/>
     <EditText
+        android:text="mail1@mail.test"
         android:id="@+id/nom_utilisateur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -25,6 +26,7 @@
         android:textSize="16dp"
         android:text="Mot de passe :"/>
     <EditText
+        android:text="password"
         android:id="@+id/mot_de_passe"
         android:layout_width="match_parent"
         android:inputType="textPassword"
