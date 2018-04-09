@@ -55,10 +55,10 @@ public class UtilisateurMock implements IUtilisateurDao{
 
     private List<Utilisateur> populateListMock(){
         List<Utilisateur> utilisateurs = new ArrayList<>();
-        utilisateurs.add(new Utilisateur(1, "mail@mail.test", "password"));
-        utilisateurs.add(new Utilisateur(2, "mail@mail.test", "password"));
-        utilisateurs.add(new Utilisateur(3, "mail@mail.test", "password"));
-        utilisateurs.add(new Utilisateur(4, "mail@mail.test", "password"));
+        utilisateurs.add(new Utilisateur(1, "mail1@mail.test", "password"));
+        utilisateurs.add(new Utilisateur(2, "mail2@mail.test", "password"));
+        utilisateurs.add(new Utilisateur(3, "mail3@mail.test", "password"));
+        utilisateurs.add(new Utilisateur(4, "mail4@mail.test", "password"));
 
         return utilisateurs;
     }

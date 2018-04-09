@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.R;
+import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Service.UtilisateurService;
 
 
 public class ConnexionActivity extends AppCompatActivity implements ConnexionFragment.OnConnexionListener{
@@ -24,10 +25,14 @@ public class ConnexionActivity extends AppCompatActivity implements ConnexionFra
     @Override
     public void seConnecter(String identifiant, String motDePasse) {
 
-        Intent intent = new Intent(ConnexionActivity.this, ListeActivity.class);
-        intent.putExtra("identifiant", identifiant);
-        intent.putExtra("motDePasse", motDePasse);
-        startActivity(intent);
+        if(UtilisateurService.getInstance().connexion(identifiant, motDePasse)){
+            Intent intent = new Intent(ConnexionActivity.this, ListeActivity.class);
+            intent.putExtra("identifiant", identifiant);
+            intent.putExtra("motDePasse", motDePasse);
+            startActivity(intent);
+        }else{
+            Toast.makeText(this,"Mail ou mot de passe incorrects", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
