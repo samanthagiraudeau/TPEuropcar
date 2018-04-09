@@ -1,6 +1,7 @@
 package com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ public class ConnexionFragment extends Fragment {
 
     private OnConnexionListener mListener;
     private Button seConnecter;
+    private Button sInscrire;
     private EditText nomUtilisateur;
     private EditText motDePasse;
 
@@ -32,6 +34,8 @@ public class ConnexionFragment extends Fragment {
 
         this.nomUtilisateur = v.findViewById(R.id.nom_utilisateur);
         this.motDePasse = v.findViewById(R.id.mot_de_passe);
+        this.seConnecter = v.findViewById(R.id.se_connecter);
+        this.sInscrire = v.findViewById(R.id.inscription);
 
         this.seConnecter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,8 +43,16 @@ public class ConnexionFragment extends Fragment {
                 if (motDePasse.getText().toString().isEmpty()) {
                     motDePasse.setError("Veuillez saisir un mot de passe");
                 } else {
-                    mListener.seConnecter(motDePasse.getText().toString());
+                    mListener.seConnecter(nomUtilisateur.getText().toString(), motDePasse.getText().toString());
                 }
+            }
+        });
+
+
+        this.sInscrire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.inscrireNewUtilisateur();
             }
         });
 
@@ -59,7 +71,8 @@ public class ConnexionFragment extends Fragment {
     }
 
     public interface OnConnexionListener {
-        void seConnecter(String identifiant);
+        void seConnecter(String identifiant, String motDePasse);
+        void inscrireNewUtilisateur();
     }
 
 }
