@@ -30,11 +30,11 @@ public class AgenceActivity extends AppCompatActivity implements AgenceFragment.
 
     @Override
     public void onClickModifierAgence(Agence agence) {
-        Utilisateur utilisateur = getIntent().getParcelableExtra("utilisateur");
+        Utilisateur utilisateur = (Utilisateur) getIntent().getSerializableExtra("utilisateur");
         utilisateur.setAgence(agence.getId());
         UtilisateurService.getInstance().inscription(utilisateur);
 
-        Intent intent = new Intent(this, null);
+        Intent intent = new Intent(this, ListeDispoActivity.class);
         intent.putExtra("utilisateur", utilisateur);
         startActivity(intent);
     }

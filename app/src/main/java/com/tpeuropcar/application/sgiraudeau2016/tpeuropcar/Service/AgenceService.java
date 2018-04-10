@@ -27,7 +27,7 @@ public class AgenceService {
     public Agence getAgenceCorrespondante(){
 
         Random generator = new Random();
-        int i = generator.nextInt(4);
+        int i = generator.nextInt(3);
 
         return AgenceMock.getInstance().getAgenceById(i);
     }
