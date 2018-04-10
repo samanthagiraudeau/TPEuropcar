@@ -20,4 +20,5 @@
     <string name="jours"> jours</string>
     <string name="devise_par_jour"> €/jour</string>
     <string name="devise">€</string>
+    <string name="token">Token :</string>
 </resources>

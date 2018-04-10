@@ -18,6 +18,7 @@ public class Utilisateur implements Serializable {
     private int id;
     private String mail;
     private String motDePasse;
+    private String token;
     @ForeignKey(childColumns = "agence", parentColumns = "id", entity = Agence.class)
     private int agence;
 
@@ -65,5 +66,13 @@ public class Utilisateur implements Serializable {
 
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

@@ -25,6 +25,7 @@ public class InscriptionFragment extends Fragment {
     private EditText nomUtilisateur;
     private EditText motDePasse;
     private EditText motDePasseConfirmation;
+    private EditText token;
 
 
 
@@ -43,19 +44,39 @@ public class InscriptionFragment extends Fragment {
         this.nomUtilisateur = v.findViewById(R.id.nom_utilisateur);
         this.motDePasse = v.findViewById(R.id.mot_de_passe);
         this.motDePasseConfirmation = v.findViewById(R.id.mot_de_passe_confirmation);
+        this.token = v.findViewById(R.id.token);
         this.sInscrire = v.findViewById(R.id.inscription);
+
+
 
         sInscrire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean inscrire = false;
+
+                // Vérif token
+                if(!token.getText().toString().isEmpty()) {
+                    inscrire = true;  // d'autres vérifs à faire
+                } else {
+                    token.setError("Le token ne peut pas être vide.");
+                }
+
+
+                // vérif mot de passe
                 if(motDePasse.getText().toString().equals(motDePasseConfirmation.getText().toString())) {
+                    inscrire = true;
+                } else {
+                    inscrire = false;
+                    motDePasseConfirmation.setError("La confirmation du mot de passe ne correspond pas.");
+                }
+
+                if(inscrire) {
                     Utilisateur newUtilisateur = new Utilisateur();
                     newUtilisateur.setMail(nomUtilisateur.getText().toString());
                     newUtilisateur.setMotDePasse(motDePasse.getText().toString());
+                    newUtilisateur.setToken(token.getText().toString());
                     mListener.inscrireNewUtilisateur(newUtilisateur);
                     //mListener.inscrireNewUtilisateur(nomUtilisateur.getText().toString());
-                } else {
-                    motDePasseConfirmation.setError("La confirmation du mot de passe ne correspond pas.");
                 }
             }
         });
