@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe.Utilisateur;
 import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.R;
 
 
@@ -47,20 +48,20 @@ public class InscriptionFragment extends Fragment {
         sInscrire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(motDePasse.getText().toString() != motDePasseConfirmation.getText().toString()) {
-                    motDePasseConfirmation.setError("La confirmation du mot de passe ne correspond pas.");
+                if(motDePasse.getText().toString().equals(motDePasseConfirmation.getText().toString())) {
+                    Utilisateur newUtilisateur = new Utilisateur();
+                    newUtilisateur.setMail(nomUtilisateur.getText().toString());
+                    newUtilisateur.setMotDePasse(motDePasse.getText().toString());
+                    mListener.inscrireNewUtilisateur(newUtilisateur);
+                    //mListener.inscrireNewUtilisateur(nomUtilisateur.getText().toString());
                 } else {
-                    /*Utilisateur newUtilisateur = Utilisateur();
-                    // TODO setter
-                    newUtilisateur.setNom();
-                    mListener.inscrireNewUtilisateur(newUtilisateur);*/
-                    mListener.inscrireNewUtilisateur(nomUtilisateur.getText().toString());
+                    motDePasseConfirmation.setError("La confirmation du mot de passe ne correspond pas.");
                 }
             }
         });
 
 
-        return inflater.inflate(R.layout.fragment_inscription, container, false);
+        return v;
     }
 
 
@@ -72,7 +73,7 @@ public class InscriptionFragment extends Fragment {
             mListener = (OnInscriptionListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement AgenceListener");
         }
     }
 
@@ -84,7 +85,7 @@ public class InscriptionFragment extends Fragment {
 
 
     public interface OnInscriptionListener {
-       //void inscrireNewUtilisateur(Utilisateur utilisateur);
-        void inscrireNewUtilisateur(String identifiant);
+       void inscrireNewUtilisateur(Utilisateur utilisateur);
+       //void inscrireNewUtilisateur(String identifiant);
     }
 }

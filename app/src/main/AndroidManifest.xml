@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.ListeActivity" />
-        <activity android:name=".Activity.InscriptionActivity"></activity>
+        <activity android:name=".Activity.InscriptionActivity" />
+        <activity android:name=".Activity.AgenceActivity"></activity>
     </application>
 
 </manifest>

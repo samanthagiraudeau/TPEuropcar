@@ -45,7 +45,21 @@ public class UtilisateurMock implements IUtilisateurDao{
 
     @Override
     public void insertUtilisateur(Utilisateur utilisateur) {
+        int idMax = -1;
 
+        for(Utilisateur u : utilisateurs){
+            if(u.getId()> idMax){
+                idMax = u.getId();
+            }
+        }
+
+        utilisateur.setId(idMax);
+        utilisateurs.add(utilisateur);
+    }
+
+    @Override
+    public void updateUtilisateur(Utilisateur utilisateur) {
+        
     }
 
     @Override

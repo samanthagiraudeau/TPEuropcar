@@ -16,6 +16,8 @@ public interface IUtilisateurDao {
 
     void insertUtilisateur(Utilisateur utilisateur);
 
+    void updateUtilisateur(Utilisateur utilisateur);
+
     List<Utilisateur> listeUtilisateurs();
 
 }

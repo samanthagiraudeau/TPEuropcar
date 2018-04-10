@@ -5,12 +5,14 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.io.Serializable;
+
 /**
  * Created by fgicquiaud2016 on 09/04/2018.
  */
 
 @Entity(tableName = "Utilisateur")
-public class Utilisateur {
+public class Utilisateur implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;

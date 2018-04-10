@@ -23,7 +23,7 @@ public class UtilisateurService {
     }
 
     public void inscription(Utilisateur utilisateur){
-
+        UtilisateurMock.getInstance().insertUtilisateur(utilisateur);
     }
 
     public boolean connexion(String mail, String password){
