@@ -4,21 +4,18 @@ package com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe;
  * Created by fgicquiaud2016 on 09/04/2018.
  */
 
-public class Vehicule {
+public class VehiculeDisponible {
 
     private int id;
     private String libelle;
-    private boolean disponible;
 
-    public Vehicule(int id, String libelle, boolean disponible) {
+    public VehiculeDisponible(int id, String libelle) {
         this.id = id;
         this.libelle = libelle;
-        this.disponible = disponible;
     }
 
-    public Vehicule(String libelle, boolean disponible) {
+    public VehiculeDisponible(String libelle) {
         this.libelle = libelle;
-        this.disponible = disponible;
     }
 
     public int getId() {
@@ -29,7 +26,4 @@ public class Vehicule {
         return libelle;
     }
 
-    public boolean isDisponible() {
-        return disponible;
-    }
 }
