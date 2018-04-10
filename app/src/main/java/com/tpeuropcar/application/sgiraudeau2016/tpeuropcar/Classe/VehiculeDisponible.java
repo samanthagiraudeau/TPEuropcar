@@ -1,10 +1,12 @@
 package com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe;
 
+import java.io.Serializable;
+
 /**
  * Created by fgicquiaud2016 on 09/04/2018.
  */
 
-public class VehiculeDisponible {
+public class VehiculeDisponible implements Serializable {
 
     private int id;
     private String libelle;
