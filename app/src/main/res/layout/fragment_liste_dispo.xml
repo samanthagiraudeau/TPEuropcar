@@ -1,0 +1,31 @@
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/liste_vehicules_dispo"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/afficher_liste_loues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_voiture_loue"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/liste_vehicules_disponibles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+
+</LinearLayout>
