@@ -45,15 +45,26 @@ public class VehiculeDisponibleAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup parent) {
-        //map to song layout
         LinearLayout vehiculeLay = (LinearLayout)vehiculeInf.inflate
                 (R.layout.un_vehicule_disponible, parent, false);
-        //get title and artist views
+
         TextView libelleView = (TextView)vehiculeLay.findViewById(R.id.libelle_vehicule);
+        TextView idView = (TextView)vehiculeLay.findViewById(R.id.id_vehicule);
+        TextView nbPlacesView = (TextView)vehiculeLay.findViewById(R.id.nombre_places);
+        TextView locaMinView = (TextView)vehiculeLay.findViewById(R.id.loca_min_vehicule);
+        TextView locaMaxView = (TextView)vehiculeLay.findViewById(R.id.loca_max_vehicule);
+        TextView tarifMinView = (TextView)vehiculeLay.findViewById(R.id.tarif_min_vehicule);
+        TextView tarifMaxView = (TextView)vehiculeLay.findViewById(R.id.tarif_max_vehicule);
 
         VehiculeDisponible currVehiculeLoue = tousLesVehiculeLoues.get(i);
 
         libelleView.setText(currVehiculeLoue.getLibelle());
+        idView.setText(String.valueOf(currVehiculeLoue.getId()));
+        nbPlacesView.setText(String.valueOf(currVehiculeLoue.getNbPlaces()));
+        locaMinView.setText(String.valueOf(currVehiculeLoue.getNbJoursMinLocation()));
+        locaMaxView.setText(String.valueOf(currVehiculeLoue.getNbJoursMaxLocation()));
+        tarifMinView.setText(String.valueOf(currVehiculeLoue.getTarifMinLocation()));
+        tarifMaxView.setText(String.valueOf(currVehiculeLoue.getTarifMaxLocation()));
 
 
         vehiculeLay.setTag(i);

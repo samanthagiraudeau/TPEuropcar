@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe.Tools;
+import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe.VehiculeDisponible;
 import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe.VehiculeLoue;
 import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.R;
 
@@ -45,14 +47,25 @@ public class VehiculeLoueAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup parent) {
-        //map to song layout
-        LinearLayout vehiculeLay = (LinearLayout)vehiculeInf.inflate
-                (R.layout.un_vehicule_loue, parent, false);
-        //get title and artist views
-        TextView libelleView = (TextView)vehiculeLay.findViewById(R.id.libelle_vehicule);
-               VehiculeLoue currVehiculeLoue = tousLesVehiculeLoues.get(i);
+
+        LinearLayout vehiculeLay = (LinearLayout)vehiculeInf.inflate(R.layout.un_vehicule_loue, parent, false);
+
+        TextView libelleView = vehiculeLay.findViewById(R.id.libelle_vehicule);
+        TextView dateDebutView = vehiculeLay.findViewById(R.id.date_debut);
+        TextView dateFinView = vehiculeLay.findViewById(R.id.date_fin);
+        TextView tarifJournalierView = vehiculeLay.findViewById(R.id.tarif_journalier_vehicule);
+
+
+        VehiculeLoue currVehiculeLoue = tousLesVehiculeLoues.get(i);
 
         libelleView.setText(currVehiculeLoue.getLibelle());
+        dateDebutView.setText(Tools.dateToString(currVehiculeLoue.getDateDebut()));
+        dateFinView.setText(Tools.dateToString(currVehiculeLoue.getDateFin()));
+
+        // tarif journalier
+        int nbJours = Tools.nbJoursEntreDeuxDates(currVehiculeLoue.getDateDebut(), currVehiculeLoue.getDateFin());
+        double tarif = currVehiculeLoue.getTarif() / nbJours;
+        tarifJournalierView.setText(String.valueOf(tarif).format("%.2f", tarif));
 
 
 

@@ -55,10 +55,10 @@ public class VehiculeDisponibleMock implements IVehiculeDisponibleDao {
 
     private ArrayList<VehiculeDisponible> populateListMock(){
         ArrayList<VehiculeDisponible> vehiculeDisponibles = new ArrayList<>();
-        vehiculeDisponibles.add(new VehiculeDisponible(1, "Citroen C3D"));
-        vehiculeDisponibles.add(new VehiculeDisponible(2, "PeugeotD"));
-        vehiculeDisponibles.add(new VehiculeDisponible(3, "PassatD"));
-        vehiculeDisponibles.add(new VehiculeDisponible(4, "BMD"));
+        vehiculeDisponibles.add(new VehiculeDisponible(1, "Citroen C3D", 5, 3, 12, 75d, 95d));
+        vehiculeDisponibles.add(new VehiculeDisponible(2, "PeugeotD", 5, 2, 13, 85d, 105d));
+        vehiculeDisponibles.add(new VehiculeDisponible(3, "PassatD", 5, 1, 14, 95d, 125d));
+        vehiculeDisponibles.add(new VehiculeDisponible(4, "BMD", 5, 4, 15, 105d, 145d));
 
         return vehiculeDisponibles;
     }

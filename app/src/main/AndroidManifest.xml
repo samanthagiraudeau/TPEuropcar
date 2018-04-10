@@ -21,7 +21,8 @@
         <activity android:name=".Activity.ListeLoueActivity" />
         <activity android:name=".Activity.ListeDispoActivity" />
         <activity android:name=".Activity.InscriptionActivity" />
-        <activity android:name=".Activity.FormulaireLocation"><activity android:name=".Activity.AgenceActivity"></activity>
+        <activity android:name=".Activity.FormulaireLocation" />
+        <activity android:name=".Activity.AgenceActivity" />
     </application>
 
 </manifest>

@@ -1,9 +1,11 @@
 package com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Mock;
 
+import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe.Tools;
 import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Classe.VehiculeLoue;
 import com.tpeuropcar.application.sgiraudeau2016.tpeuropcar.Interface.IVehiculeDao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -53,10 +55,10 @@ public class VehiculeLoueMock implements IVehiculeDao {
 
     private ArrayList<VehiculeLoue> populateListMock(){
         ArrayList<VehiculeLoue> vehiculeLoues = new ArrayList<>();
-        vehiculeLoues.add(new VehiculeLoue(1, "Citroen C3"));
-        vehiculeLoues.add(new VehiculeLoue(2, "Peugeot"));
-        vehiculeLoues.add(new VehiculeLoue(3, "Passat"));
-        vehiculeLoues.add(new VehiculeLoue(4, "BM"));
+        vehiculeLoues.add(new VehiculeLoue(1, "Citroen C3", new Date(), Tools.ajouterJour(new Date(), 5), 1256d));
+        vehiculeLoues.add(new VehiculeLoue(2, "Peugeot", new Date(),  Tools.ajouterJour(new Date(), 6), 1256d));
+        vehiculeLoues.add(new VehiculeLoue(3, "Passat", new Date(),  Tools.ajouterJour(new Date(), 7), 1256d));
+        vehiculeLoues.add(new VehiculeLoue(4, "BM", new Date(),  Tools.ajouterJour(new Date(), 8), 1256d));
 
         return vehiculeLoues;
     }
