@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Raison sociale :"/>
+        android:text="@string/raison_sociale"/>
     <EditText
         android:id="@+id/raison_sociale"
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SIRET :"/>
+        android:text="@string/siret"/>
     <EditText
         android:id="@+id/siret"
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voie :"/>
+        android:text="@string/voie"/>
     <EditText
         android:id="@+id/voie"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Code postal :"/>
+        android:text="@string/code_postal"/>
     <EditText
         android:id="@+id/code_postal"
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ville :"/>
+        android:text="@string/ville"/>
     <EditText
         android:id="@+id/ville"
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
             android:id="@+id/btn_modifier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MODIFIER"/>
+            android:text="@string/modifier"/>
     </LinearLayout>
 
 </LinearLayout>

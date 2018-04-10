@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TPEuropcar</string>
+
+
+    <string name="liste_vehicules_dispo">List of available vehicle</string>
+    <string name="liste_vehicules_loue">List of rented vehicle</string>
+    <string name="raison_sociale">Social reason :</string>
+    <string name="siret">SIRET :</string>
+    <string name="voie">Way :</string>
+    <string name="code_postal">Postal code :</string>
+    <string name="ville">City :</string>
+    <string name="modifier">MODIFY</string>
+    <string name="mail_utilisateur">User mail :</string>
+    <string name="mot_de_passe">Password :</string>
+    <string name="se_souvenir_de_moi">Remember me</string>
+    <string name="se_connecter">Sign in</string>
+    <string name="s_inscrire">Sign up</string>
+    <string name="confirmer_mdp">Confirm the password</string>
+    <string name="places_disponibles"> available seats</string>
+    <string name="jours"> days</string>
+    <string name="devise_par_jour"> $/day</string>
+    <string name="devise">$</string>
+</resources>

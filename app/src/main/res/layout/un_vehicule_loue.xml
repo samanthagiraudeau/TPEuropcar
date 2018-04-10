@@ -24,7 +24,12 @@
             android:id="@+id/tarif_journalier_vehicule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="150 € "
+            android:text="150"
+            android:gravity="right"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/devise"
             android:gravity="right"/>
 
     </LinearLayout>
